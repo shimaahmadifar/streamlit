@@ -51,20 +51,21 @@ def correct_temperature_and_humidity(df):
 # Define datasets
 datasets = {
     "Grafico delle Catture": {
-        "Cicalino 1": r'C:\bi\grafico-delle-catture (Cicalino 1).csv',
-        "Cicalino 2": r'C:\bi\grafico-delle-catture (Cicalino 2).csv',
-        "Imola 1": r'C:\bi\grafico-delle-catture (Imola 1).csv',
-        "Imola 2": r'C:\bi\grafico-delle-catture (Imola 2).csv',
-        "Imola 3": r'C:\bi\grafico-delle-catture (Imola 3).csv',
+        "Cicalino 1": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/grafico-delle-catture%20(Cicalino%201).csv",
+        "Cicalino 2": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/grafico-delle-catture%20(Cicalino%202).csv",
+        "Imola 1": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/grafico-delle-catture%20(Imola%201).csv",
+        "Imola 2": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/grafico-delle-catture%20(Imola%202).csv",
+        "Imola 3": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/grafico-delle-catture%20(Imola%203).csv",
     },
     "Dati Meteo Storici": {
-        "Cicalino 1": r'C:\bi\dati-meteo-storici (Cicalino 1).csv',
-        "Cicalino 2": r'C:\bi\dati-meteo-storici (Cicalino 2).csv',
-        "Imola 1": r'C:\bi\dati-meteo-storici (Imola 1).csv',
-        "Imola 2": r'C:\bi\dati-meteo-storici (Imola 2).csv',
-        "Imola 3": r'C:\bi\dati-meteo-storici (Imola 3).csv',
+        "Cicalino 1": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/dati-meteo-storici%20(Cicalino%201).csv",
+        "Cicalino 2": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/dati-meteo-storici%20(Cicalino%202).csv",
+        "Imola 1": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/dati-meteo-storici%20(Imola%201).csv",
+        "Imola 2": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/dati-meteo-storici%20(Imola%202).csv",
+        "Imola 3": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/dati-meteo-storici%20(Imola%203).csv",
     }
 }
+
 
 # Location mapping
 locations = ["Cicalino 1", "Cicalino 2", "Imola 1", "Imola 2", "Imola 3"]
@@ -124,13 +125,13 @@ if uploaded_files:
             st.download_button("Download Processed CSV", csv, f"processed_{selected_file}", "text/csv")
 
 
-dft1 = pd.read_csv(r"C:\bi\dft1.csv")
-dft2 = pd.read_csv(r"C:\bi\dft2.csv")
-dft3 = pd.read_csv(r"C:\bi\dft3.csv")
-dft4 = pd.read_csv(r"C:\bi\dft4.csv")
-dft5 = pd.read_csv(r"C:\bi\dft5.csv")
-df = pd.read_csv(r"C:\bi\df.csv")
-df_merged = pd.read_csv(r"C:\bi\df_saved.csv")
+dft1 = pd.read_csv("https://raw.githubusercontent.com/seyedehsara/streamlit/main/dft1.csv")
+dft2 = pd.read_csv("https://raw.githubusercontent.com/seyedehsara/streamlit/main/dft2.csv")
+dft3 = pd.read_csv("https://raw.githubusercontent.com/seyedehsara/streamlit/main/dft3.csv")
+dft4 = pd.read_csv("https://raw.githubusercontent.com/seyedehsara/streamlit/main/dft4.csv")
+dft5 = pd.read_csv("https://raw.githubusercontent.com/seyedehsara/streamlit/main/dft5.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/seyedehsara/streamlit/main/df.csv")
+df_merged = pd.read_csv("https://raw.githubusercontent.com/seyedehsara/streamlit/main/df_saved.csv")
 
 
 st.title("Interactive Data Viewer")
@@ -219,17 +220,17 @@ if st.checkbox("📈 Show Distribution of New Captures", key="new_captures_chart
 st.subheader("📋 Dataset Preview")
 st.dataframe(df_merged.head())
 
-st.header("Distribution of average tempreture")
-st.image(r"C:\bi\download (2).png", use_container_width=True)
+st.header("Distribution of average temperature")
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/download%20(2).png", use_container_width=True)
 
-st.header("tempreture trends")
-st.image(r"C:\bi\photo_2025-02-18_09-24-19.jpg", use_container_width=True)
+st.header("Temperature trends")
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/photo_2025-02-18_21-16-37.jpg", use_container_width=True)
 
 st.header("Insect capture over time")
-st.image(r"C:\bi\photo_2025-02-18_09-10-08.jpg ", use_container_width=True)
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/photo_2025-02-18_21-16-25.jpg", use_container_width=True)
 
-st.header(" Record duration")
-st.image(r"C:\bi\photo_2025-02-18_09-17-14.jpg ", use_container_width=True)
+st.header("Record duration")
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/photo_2025-02-18_21-16-31.jpg", use_container_width=True)
 
 
 
@@ -404,13 +405,14 @@ tabs = st.tabs([
 
 # Image paths
 image_paths = [
-    r"C:\bi\linear heatmap.png",
-    r"C:\bi\spearman.png",
-    r"C:\bi\kendall.png",
-    r"C:\bi\imola1.png",
-    r"C:\bi\imola2.png",
-    r"C:\bi\imola3.png",
+    "https://raw.githubusercontent.com/seyedehsara/streamlit/main/heatmap%20c1.png",    # Linear heatmap
+    "https://raw.githubusercontent.com/seyedehsara/streamlit/main/spearman%20c1.png",    # Spearman
+    "https://raw.githubusercontent.com/seyedehsara/streamlit/main/kendall%20c1.png",     # Kendall
+    "https://raw.githubusercontent.com/seyedehsara/streamlit/main/heatmap%20I1.png",     # Imola 1
+    "https://raw.githubusercontent.com/seyedehsara/streamlit/main/spearman%20i1.png",    # Imola 2
+    "https://raw.githubusercontent.com/seyedehsara/streamlit/main/kendall%20i1.png",     # Imola 3
 ]
+
 
 # Display images in respective tabs
 for tab, image_path in zip(tabs, image_paths):
@@ -420,7 +422,8 @@ for tab, image_path in zip(tabs, image_paths):
 
 st.header("Number of insect caught over time")
 
-st.image(r"C:\bi\number of insect over time.png", use_container_width=True)
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/number%20of%20insect%20caught%20over%20time.png", use_container_width=True)
+
 
 
 
@@ -435,23 +438,27 @@ option = st.radio(
 
 # Image mapping
 image_paths = {
-    "DFC1 Over Time": r"C:\bi\insect count.png",
-    "DFC2 Over Time": r"C:\bi\insect count dfc2.png",
-    "Total Count": r"C:\bi\total insect count.png"
+    "DFC1 Over Time": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/insect%20count%20dfc1.png",  # DFC1 Over Time
+    "DFC2 Over Time": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/insect%20count%20dfc2.png",  # DFC2 Over Time
+    "Total Count": "https://raw.githubusercontent.com/seyedehsara/streamlit/main/total%20count.png",  # Total Count
 }
+
 
 # Display selected image
 st.image(image_paths[option], caption=option, use_container_width=True)
 
-st.image(r"C:\bi\p,d,q.png", use_container_width=True)
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/p%2Cq%2Cd.png", use_container_width=True)
+
 
 st.title("Insect count from all")
-st.image(r"C:\bi\all over time.png", use_container_width=True)
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/insect%20count%20dfc1%20over%20time.png", use_container_width=True)
 
-st.image(r"C:\bi\p,d,q,2.png", use_container_width=True)
+
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/p%2Cq%2Cd%2C2.png", use_container_width=True)
 
 
 st.title("prediction ARIMA")
-st.image(r"C:\bi\download.png", use_container_width=True)
+st.image("https://raw.githubusercontent.com/seyedehsara/streamlit/main/arima.png", use_container_width=True)
+
 
 
